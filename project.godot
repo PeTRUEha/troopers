@@ -13,3 +13,8 @@ config_version=5
 config/name="Troopers"
 run/main_scene="uid://cm3f5615i2etl"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[autoload]
+
+Constants="*res://scripts/globals/constants.gd"
+Functions="*res://scripts/globals/functions.gd"
