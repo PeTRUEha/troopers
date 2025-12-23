@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cm3f5615i2etl"]
+[gd_scene load_steps=35 format=4 uid="uid://cm3f5615i2etl"]
 
 [ext_resource type="Texture2D" uid="uid://hv1s7dgrmtb1" path="res://assets/Tiny Swords (Free Pack)/Terrain/Tilemap_color3.png" id="1_2r41h"]
 [ext_resource type="Texture2D" uid="uid://dsw64arwfi5li" path="res://assets/Tiny Swords (Free Pack)/Decorations/Rocks/Rock1.png" id="2_klq6b"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://cpa7kmuk0vs0t" path="res://scripts/unit.gd" id="7_8c41q"]
 [ext_resource type="Texture2D" uid="uid://bq05siqyc6ejk" path="res://assets/Tiny Swords (Free Pack)/Units/Yellow Units/Warrior/Warrior_Idle.png" id="8_olg7q"]
 [ext_resource type="Texture2D" uid="uid://bdonarqftk6b3" path="res://assets/Tiny Swords (Free Pack)/Units/Yellow Units/Warrior/Warrior_Run.png" id="9_t1rx8"]
+[ext_resource type="Script" uid="uid://jaiqhru4hgk" path="res://scripts/visuals.gd" id="10_8iemx"]
+[ext_resource type="Script" uid="uid://bnb2436y3nvev" path="res://scripts/pathfinding.gd" id="10_t1rx8"]
+[ext_resource type="Script" uid="uid://dscomo5mxq773" path="res://scripts/input_handler.gd" id="11_8iemx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iemx"]
 texture = ExtResource("1_2r41h")
@@ -1056,4 +1059,11 @@ sprite_frames = SubResource("SpriteFrames_xy2fk")
 animation = &"run"
 frame_progress = 0.95644385
 
-[connection signal="changed_grid_coords" from="Units/Unit" to="Units/Unit" method="_on_changed_grid_coords"]
+[node name="Visuals" type="Node2D" parent="Units/Unit"]
+script = ExtResource("10_8iemx")
+
+[node name="Pathfinding" type="Node2D" parent="."]
+script = ExtResource("10_t1rx8")
+
+[node name="InputHandler" type="Node2D" parent="."]
+script = ExtResource("11_8iemx")
