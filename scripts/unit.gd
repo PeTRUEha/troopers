@@ -11,9 +11,11 @@ const speed: float = 200
 
 signal changed_grid_coords(from: Vector2i, to: Vector2i)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var input_handler: InputHandler = $"../../InputHandler"
 
 func _ready() -> void:
 	snap_to_tile()
+	input_handler.tile_clicked.connect(_on_tile_clicked, CONNECT_DEFERRED)
 
 
 func snap_to_tile():
@@ -44,3 +46,6 @@ func update_move_tween(target_position: Vector2, duration: float):
 	move_tween = create_tween()
 	move_tween.set_trans(Tween.TRANS_LINEAR)
 	move_tween.tween_property(self, "position", target_position, duration)
+	
+func _on_tile_clicked(tile: Vector2i):
+	move_to_grid(tile)

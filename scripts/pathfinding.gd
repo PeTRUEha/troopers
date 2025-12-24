@@ -21,7 +21,7 @@ func _get_grid_region() -> Rect2i:
 	var grid_rect := Rect2i()
 	for tm_layer: TileMapLayer in terrain.get_children():
 		grid_rect = grid_rect.merge(tm_layer.get_used_rect())
-	print("grid_rect = ", grid_rect)
+	print("grid_region = ", grid_rect)
 	return grid_rect
 	
 	
