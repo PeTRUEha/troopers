@@ -2,9 +2,6 @@ extends Node2D
 
 class_name InputHandler
 
-@onready var unit: Unit = $"../Units/Unit"
-
-
 signal tile_clicked(Vector2i)
 
 
@@ -14,4 +11,3 @@ func _input(event):
 		var grid_tile = Functions.position_to_grid_coords(mouse_pos)  # Your existing function
 		print("Clicked tile: ", grid_tile)
 		tile_clicked.emit(grid_tile)
-		#unit.move_to_grid.call_deferred(grid_tile)

@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cpa7kmuk0vs0t" path="res://scripts/unit.gd" id="7_8c41q"]
 [ext_resource type="Texture2D" uid="uid://bq05siqyc6ejk" path="res://assets/Tiny Swords (Free Pack)/Units/Yellow Units/Warrior/Warrior_Idle.png" id="8_olg7q"]
 [ext_resource type="Texture2D" uid="uid://bdonarqftk6b3" path="res://assets/Tiny Swords (Free Pack)/Units/Yellow Units/Warrior/Warrior_Run.png" id="9_t1rx8"]
-[ext_resource type="Script" uid="uid://jaiqhru4hgk" path="res://scripts/visuals.gd" id="10_8iemx"]
+[ext_resource type="Script" uid="uid://dj1tmugyxkucf" path="res://scripts/movement.gd" id="10_8iemx"]
 [ext_resource type="Script" uid="uid://bnb2436y3nvev" path="res://scripts/pathfinding.gd" id="10_t1rx8"]
 [ext_resource type="Script" uid="uid://dscomo5mxq773" path="res://scripts/input_handler.gd" id="11_8iemx"]
 
@@ -1059,7 +1059,7 @@ sprite_frames = SubResource("SpriteFrames_xy2fk")
 animation = &"run"
 frame_progress = 0.95644385
 
-[node name="Visuals" type="Node2D" parent="Units/Unit"]
+[node name="Movement" type="Node2D" parent="Units/Unit"]
 script = ExtResource("10_8iemx")
 
 [node name="Pathfinding" type="Node2D" parent="."]

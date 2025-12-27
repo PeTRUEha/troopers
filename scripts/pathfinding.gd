@@ -32,6 +32,10 @@ func set_tile_walkable(grid_pos: Vector2i, walkable: bool) -> void:
 
 ## Finds path from start to end and calls callback with result
 ## Path is array of world positions (Vector2)
-func find_path(start_pos: Vector2i, end_pos: Vector2i, callback: Callable) -> void:
-	var path = astar_grid.get_point_path(start_pos, end_pos)
-	callback.call_deferred(path)
+func request_path(start_pos: Vector2i, end_pos: Vector2i, callback: Callable) -> void:
+	# TODO: add new thread
+	var path: PackedVector2Array = astar_grid.get_point_path(start_pos, end_pos)
+	var vector2i_path: Array[Vector2i] = []
+	for v :Vector2 in path.slice(1):
+		vector2i_path.append(Functions.position_to_grid_coords(v))
+	callback.call_deferred(vector2i_path)
